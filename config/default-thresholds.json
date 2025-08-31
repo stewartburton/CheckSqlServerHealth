@@ -1,0 +1,32 @@
+{
+  "description": "Default health check thresholds - modify these values to customize alert levels",
+  "thresholds": {
+    "diskSpace": {
+      "warningPercent": 25,
+      "criticalPercent": 10,
+      "description": "Free disk space percentage thresholds"
+    },
+    "cpu": {
+      "warningPercent": 75,
+      "criticalPercent": 90,
+      "description": "CPU usage percentage thresholds"
+    },
+    "memory": {
+      "warningPercent": 85,
+      "criticalPercent": 95,
+      "description": "Memory usage percentage thresholds"
+    },
+    "diskLatency": {
+      "warningMs": 20,
+      "criticalMs": 50,
+      "description": "Disk latency in milliseconds"
+    },
+    "sql": {
+      "longRunningQueryMinutes": 5,
+      "backupAgeDays": 1,
+      "description": "SQL Server specific thresholds"
+    }
+  },
+  "version": "1.0",
+  "lastModified": "2025-08-31"
+}

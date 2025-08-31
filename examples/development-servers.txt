@@ -1,0 +1,17 @@
+# Development Environment Servers
+# Format: ServerName or ServerName,Port
+
+# Development SQL Servers
+DEV-SQL01
+DEV-SQL02,1433
+DEV-TESTDB01
+
+# QA Environment
+QA-SQL01,1521
+QA-INTEGRATION01
+QA-PERFORMANCE01,2433
+
+# Staging Servers
+STAGING-SQL01
+STAGING-API-DB01,1433
+STAGING-WEB-DB01

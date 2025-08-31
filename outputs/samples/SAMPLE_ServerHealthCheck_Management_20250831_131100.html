@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Server Health Check Management Report (SAMPLE)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f8f9fa; }
+        .header { background-color: #2E75B6; color: white; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .sample-banner { background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+        .summary { background-color: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #2E75B6; }
+        .status-excellent { color: #28a745; font-weight: bold; }
+        .status-good { color: #6f42c1; font-weight: bold; }
+        .status-fair { color: #fd7e14; font-weight: bold; }
+        .status-critical { color: #dc3545; font-weight: bold; }
+        table { border-collapse: collapse; width: 100%; margin: 15px 0; background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+        th { background-color: #e9ecef; font-weight: bold; color: #495057; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        .metric-card { display: inline-block; background: white; padding: 15px; margin: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; min-width: 120px; }
+        .metric-number { font-size: 24px; font-weight: bold; color: #2E75B6; }
+        .metric-label { font-size: 12px; color: #6c757d; margin-top: 5px; }
+        .footer { text-align: center; margin-top: 40px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="sample-banner">
+        <h3>SAMPLE REPORT - Preview of Actual Output</h3>
+        <p>This shows what your management report will look like with real health check data from your 10 servers.</p>
+    </div>
+
+    <div class="header">
+        <h1>Server Health Check Management Report</h1>
+        <p><strong>Generated:</strong> August 31, 2025 at 1:11:00 PM</p>
+        <p><strong>Environment:</strong> 10 Servers | <strong>Profile:</strong> WindowsAndSQL</p>
+    </div>
+    
+    <div class="summary">
+        <h2>Executive Dashboard</h2>
+        
+        <div class="metric-card">
+            <div class="metric-number">10</div>
+            <div class="metric-label">TOTAL SERVERS</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-number" style="color: #28a745;">8</div>
+            <div class="metric-label">ONLINE</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-number" style="color: #dc3545;">2</div>
+            <div class="metric-label">NEED ATTENTION</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-number">~25 sec</div>
+            <div class="metric-label">ESTIMATED DURATION</div>
+        </div>
+    </div>
+    
+    <div class="summary">
+        <h2>Your Server List Preview</h2>
+        <table>
+            <tr>
+                <th>Server Name</th>
+                <th>Port/Instance</th>
+                <th>Will Check</th>
+                <th>Estimated Status</th>
+            </tr>
+            <tr>
+                <td><strong>SQL-SERVER01</strong></td>
+                <td>Default</td>
+                <td>Windows + SQL</td>
+                <td class="status-excellent">Excellent (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>SQL-SERVER02</strong></td>
+                <td>1433</td>
+                <td>Windows + SQL</td>
+                <td class="status-good">Good (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>DB-PROD-01</strong></td>
+                <td>Default</td>
+                <td>Windows + SQL</td>
+                <td class="status-fair">Fair (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>DB-PROD-02</strong></td>
+                <td>1521</td>
+                <td>Windows + SQL</td>
+                <td class="status-critical">Critical (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>SQLCLUSTER01\INSTANCE1</strong></td>
+                <td>Default</td>
+                <td>Windows + SQL</td>
+                <td class="status-good">Good (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>BACKUP-SERVER01</strong></td>
+                <td>Default</td>
+                <td>Windows + SQL</td>
+                <td class="status-excellent">Excellent (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>DR-SQL01</strong></td>
+                <td>1212</td>
+                <td>Windows + SQL</td>
+                <td class="status-good">Good (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>WEB-DB01</strong></td>
+                <td>Default</td>
+                <td>Windows + SQL</td>
+                <td class="status-fair">Fair (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>APP-DB02</strong></td>
+                <td>1313</td>
+                <td>Windows + SQL</td>
+                <td class="status-good">Good (sample)</td>
+            </tr>
+            <tr>
+                <td><strong>ANALYTICS-DB01</strong></td>
+                <td>Default</td>
+                <td>Windows + SQL</td>
+                <td class="status-excellent">Excellent (sample)</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="summary">
+        <h2>What You'll Get in the Real Report</h2>
+        <ul>
+            <li><strong>Critical Alerts</strong> - Immediate issues requiring attention</li>
+            <li><strong>Real Metrics</strong> - CPU, Memory, Disk usage for each server</li>
+            <li><strong>SQL Health</strong> - Job failures, backup status, blocking queries</li>
+            <li><strong>Recommendations</strong> - Specific action items based on findings</li>
+            <li><strong>Trends</strong> - Performance indicators and capacity planning</li>
+        </ul>
+        
+        <p><strong>Ready to run the real health check?</strong></p>
+        <code>.\CheckSqlServerHealth.ps1 -ServerListPath "servers_sample.txt"</code>
+    </div>
+    
+    <div class="footer">
+        <p><strong>Next Steps:</strong></p>
+        <p>1. Review this sample to understand the report format</p>
+        <p>2. Run without -DryRun to get real health data</p>
+        <p>3. Use the technical report for detailed troubleshooting</p>
+        
+        <hr style="margin: 20px 0; border: none; height: 1px; background: #dee2e6;">
+        <p><em>Generated by SQL Server Health Check Script (Dry Run Mode)</em></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Sample Server List for Testing
+# Format: ServerName or ServerName,Port or ServerName\InstanceName
+# Lines starting with # are comments
+
+# Sample SQL Servers for demonstration
+SQL-SERVER01
+SQL-SERVER02,1433
+DB-PROD-01
+DB-PROD-02,1521
+SQLCLUSTER01\INSTANCE1
+BACKUP-SERVER01
+DR-SQL01,1212
+WEB-DB01
+APP-DB02,1313
+ANALYTICS-DB01

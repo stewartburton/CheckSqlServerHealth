@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Server Health Check Management Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f8f9fa; }
+        .header { background-color: #2E75B6; color: white; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .summary { background-color: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #2E75B6; }
+        .critical-alert { background-color: #fff5f5; border-left: 4px solid #dc3545; padding: 15px; margin: 15px 0; border-radius: 8px; }
+        .status-excellent { color: #28a745; font-weight: bold; }
+        .status-good { color: #6f42c1; font-weight: bold; }
+        .status-fair { color: #fd7e14; font-weight: bold; }
+        .status-poor { color: #dc3545; font-weight: bold; }
+        .status-critical { color: #dc3545; font-weight: bold; background-color: #fff5f5; padding: 2px 6px; border-radius: 4px; }
+        .status-unknown { color: #6c757d; font-weight: bold; }
+        table { border-collapse: collapse; width: 100%; margin: 15px 0; background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+        th { background-color: #e9ecef; font-weight: bold; color: #495057; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        tr:hover { background-color: #e9ecef; }
+        .metric-card { display: inline-block; background: white; padding: 15px; margin: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; min-width: 120px; }
+        .metric-number { font-size: 24px; font-weight: bold; color: #2E75B6; }
+        .metric-label { font-size: 12px; color: #6c757d; margin-top: 5px; }
+        .recommendation { background-color: #d1ecf1; border: 1px solid #bee5eb; padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .footer { text-align: center; margin-top: 40px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .icon { margin-right: 8px; }
+        h1, h2, h3 { color: #343a40; }
+        .health-gauge { display: inline-block; width: 100px; height: 100px; position: relative; margin: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏥 Server Health Check Management Report</h1>
+        <p><strong>Generated:</strong> August 31, 2024 at 1:05:15 PM</p>
+        <p><strong>Environment:</strong> Production Infrastructure | <strong>Profile:</strong> Windows + SQL Server</p>
+    </div>
+    
+    <div class="critical-alert">
+        <h2>🚨 CRITICAL ALERTS - Immediate Action Required</h2>
+        <ul>
+            <li><strong>DB-PROD-01:</strong> Server completely unreachable - check network connectivity and server status</li>
+            <li><strong>SQLCLUSTER01:</strong> Multiple critical issues detected - CPU at 95%, Memory at 98%, 5 failed SQL jobs, 3 databases without recent backups</li>
+            <li><strong>DB-PROD-02:</strong> SQL Server service stopped, critically low disk space (3.2% free on C: drive)</li>
+        </ul>
+        <p><strong>⏰ Recommended Response Time:</strong> Within 1 hour</p>
+    </div>
+    
+    <div class="summary">
+        <h2>📊 Executive Dashboard</h2>
+        
+        <div class="metric-card">
+            <div class="metric-number">10</div>
+            <div class="metric-label">TOTAL SERVERS</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-number" style="color: #28a745;">9</div>
+            <div class="metric-label">ONLINE</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-number" style="color: #dc3545;">1</div>
+            <div class="metric-label">OFFLINE</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-number" style="color: #dc3545;">2</div>
+            <div class="metric-label">CRITICAL</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-number">15 sec</div>
+            <div class="metric-label">CHECK DURATION</div>
+        </div>
+        
+        <div style="clear: both; margin: 20px 0;">
+            <h3>🎯 Health Status Distribution</h3>
+            <p>
+                <span class="status-excellent">✅ Excellent: 2 servers</span> | 
+                <span class="status-good">🟢 Good: 4 servers</span> | 
+                <span class="status-fair">🟡 Fair: 2 servers</span> | 
+                <span class="status-poor">🟠 Poor: 0 servers</span> | 
+                <span class="status-critical">🔴 Critical: 2 servers</span> | 
+                <span class="status-unknown">❓ Unknown: 0 servers</span>
+            </p>
+            
+            <div style="background: #e9ecef; height: 20px; border-radius: 10px; margin: 10px 0; overflow: hidden;">
+                <div style="background: #28a745; height: 100%; width: 20%; float: left;"></div>
+                <div style="background: #6f42c1; height: 100%; width: 40%; float: left;"></div>
+                <div style="background: #fd7e14; height: 100%; width: 20%; float: left;"></div>
+                <div style="background: #dc3545; height: 100%; width: 20%; float: left;"></div>
+            </div>
+            <small style="color: #6c757d;">Health Status Distribution: 20% Excellent, 40% Good, 20% Fair, 20% Critical</small>
+        </div>
+    </div>
+    
+    <div class="summary">
+        <h2>🖥️ Server Details</h2>
+        <table>
+            <tr>
+                <th>Server Name</th>
+                <th>Overall Status</th>
+                <th>Availability</th>
+                <th>Check Duration</th>
+                <th>Key Issues</th>
+                <th>Priority</th>
+            </tr>
+            <tr style="border-left: 4px solid #28a745;">
+                <td><strong>SQL-SERVER01</strong></td>
+                <td class="status-good">🟢 Good</td>
+                <td>✅ Online</td>
+                <td>6 seconds</td>
+                <td>Minor performance optimization opportunities</td>
+                <td>Low</td>
+            </tr>
+            <tr style="border-left: 4px solid #28a745;">
+                <td><strong>SQL-SERVER02</strong></td>
+                <td class="status-excellent">✅ Excellent</td>
+                <td>✅ Online</td>
+                <td>5 seconds</td>
+                <td>None - optimal performance</td>
+                <td>None</td>
+            </tr>
+            <tr style="border-left: 4px solid #dc3545;">
+                <td><strong>DB-PROD-01</strong></td>
+                <td class="status-critical">🔴 Critical</td>
+                <td>❌ Offline</td>
+                <td>1 second</td>
+                <td>Server completely unreachable</td>
+                <td><strong>🚨 URGENT</strong></td>
+            </tr>
+            <tr style="border-left: 4px solid #fd7e14;">
+                <td><strong>DB-PROD-02</strong></td>
+                <td class="status-fair">🟡 Fair</td>
+                <td>✅ Online</td>
+                <td>7 seconds</td>
+                <td>High CPU usage, Low disk space, SQL service stopped</td>
+                <td><strong>High</strong></td>
+            </tr>
+            <tr style="border-left: 4px solid #dc3545;">
+                <td><strong>SQLCLUSTER01</strong></td>
+                <td class="status-critical">🔴 Critical</td>
+                <td>✅ Online</td>
+                <td>6 seconds</td>
+                <td>Critical CPU/Memory, Failed jobs, Backup issues</td>
+                <td><strong>🚨 URGENT</strong></td>
+            </tr>
+            <tr style="border-left: 4px solid #6f42c1;">
+                <td><strong>BACKUP-SERVER01</strong></td>
+                <td class="status-good">🟢 Good</td>
+                <td>✅ Online</td>
+                <td>6 seconds</td>
+                <td>None - running well</td>
+                <td>Low</td>
+            </tr>
+            <tr style="border-left: 4px solid #28a745;">
+                <td><strong>DR-SQL01</strong></td>
+                <td class="status-excellent">✅ Excellent</td>
+                <td>✅ Online</td>
+                <td>5 seconds</td>
+                <td>None - disaster recovery ready</td>
+                <td>None</td>
+            </tr>
+            <tr style="border-left: 4px solid #fd7e14;">
+                <td><strong>WEB-DB01</strong></td>
+                <td class="status-fair">🟡 Fair</td>
+                <td>✅ Online</td>
+                <td>6 seconds</td>
+                <td>High CPU and Memory utilization</td>
+                <td>Medium</td>
+            </tr>
+            <tr style="border-left: 4px solid #6f42c1;">
+                <td><strong>APP-DB02</strong></td>
+                <td class="status-good">🟢 Good</td>
+                <td>✅ Online</td>
+                <td>6 seconds</td>
+                <td>None - stable performance</td>
+                <td>Low</td>
+            </tr>
+            <tr style="border-left: 4px solid #6f42c1;">
+                <td><strong>ANALYTICS-DB01</strong></td>
+                <td class="status-good">🟢 Good</td>
+                <td>✅ Online</td>
+                <td>6 seconds</td>
+                <td>None - analytics processing normally</td>
+                <td>Low</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="recommendation">
+        <h2>💡 Strategic Recommendations</h2>
+        
+        <h3>🔥 Immediate Actions (Next 2 Hours)</h3>
+        <ul>
+            <li><strong>DB-PROD-01:</strong> Investigate server outage - check power, network, and hardware status</li>
+            <li><strong>SQLCLUSTER01:</strong> Emergency resource intervention - identify and terminate resource-intensive processes</li>
+            <li><strong>DB-PROD-02:</strong> Restart SQL Server service and perform emergency disk cleanup</li>
+        </ul>
+        
+        <h3>📈 Performance Optimization (Next 7 Days)</h3>
+        <ul>
+            <li><strong>WEB-DB01:</strong> Memory upgrade recommended - current utilization at 88.7%</li>
+            <li><strong>SQLCLUSTER01:</strong> Review and optimize backup strategy for failed jobs</li>
+            <li><strong>General:</strong> Implement automated disk space monitoring alerts</li>
+        </ul>
+        
+        <h3>🔮 Strategic Planning (Next 30 Days)</h3>
+        <ul>
+            <li>Consider load balancing for high-utilization servers</li>
+            <li>Implement proactive monitoring dashboards</li>
+            <li>Schedule quarterly capacity planning reviews</li>
+            <li>Evaluate disaster recovery failover procedures</li>
+        </ul>
+    </div>
+    
+    <div class="summary">
+        <h2>📈 Infrastructure Health Summary</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h3>Overall Infrastructure Status</h3>
+                <p style="font-size: 20px; color: #dc3545; font-weight: bold;">🔴 CRITICAL - Immediate Intervention Required</p>
+                <p><strong>Risk Level:</strong> High - 20% of servers in critical state</p>
+                <p><strong>Business Impact:</strong> Potential service disruption affecting user experience</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(#28a745 0deg 72deg, #6f42c1 72deg 216deg, #fd7e14 216deg 288deg, #dc3545 288deg 360deg); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">
+                    Health<br>Score<br>60%
+                </div>
+            </div>
+        </div>
+        
+        <h3>🎯 Key Performance Indicators</h3>
+        <ul>
+            <li><strong>Availability:</strong> 90% (9/10 servers online)</li>
+            <li><strong>Performance:</strong> 60% of servers operating optimally</li>
+            <li><strong>Backup Compliance:</strong> 70% (3 databases missing recent backups)</li>
+            <li><strong>Resource Utilization:</strong> 2 servers over recommended thresholds</li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <p><strong>Report Details:</strong></p>
+        <p>📄 <strong>Technical Report:</strong> ServerHealthCheck_Technical_20240831_130500.txt</p>
+        <p>📊 <strong>Excel Analysis:</strong> ServerHealthCheck_Management_20240831_130500.xlsx</p>
+        <p>🔍 <strong>Detailed Logs:</strong> ServerHealthCheck_Detailed_20240831_130500.log</p>
+        
+        <hr style="margin: 20px 0; border: none; height: 1px; background: #dee2e6;">
+        
+        <p><em>🤖 Generated by SQL Server Health Check Script | Next scheduled check: September 7, 2024</em></p>
+        <p><em>For technical details and troubleshooting steps, refer to the technical report.</em></p>
+        <p style="font-size: 12px; color: #6c757d;">Report Version 2.0 | Contact IT Operations for questions</p>
+    </div>
+</body>
+</html>

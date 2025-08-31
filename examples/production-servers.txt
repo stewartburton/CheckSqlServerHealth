@@ -1,0 +1,23 @@
+# Production SQL Servers
+# Format: ServerName or ServerName,Port or ServerName\InstanceName
+# Lines starting with # are comments and will be ignored
+
+# Primary Production Servers
+PROD-SQL01
+PROD-SQL02,1433
+PROD-CLUSTER01\INSTANCE1
+
+# Application Database Servers  
+APP-DB-WEB01,1521
+APP-DB-API01
+APP-DB-MOBILE01,1212
+
+# Analytics and Reporting
+ANALYTICS-SQL01
+REPORTING-SQL01,2433
+DATAWAREHOUSE-SQL01\DW_INSTANCE
+
+# Backup and DR Servers
+BACKUP-SQL01
+DR-SQL01,1433
+DR-SQL02\DR_INSTANCE
